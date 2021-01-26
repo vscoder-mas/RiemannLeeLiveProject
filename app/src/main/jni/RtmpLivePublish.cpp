@@ -124,7 +124,8 @@ void RtmpLivePublish::addSequenceH264Header(unsigned char *sps, int sps_len, uns
 
     //send rtmp
     if (RTMP_IsConnected(rtmp)) {
-        RTMP_SendPacket(rtmp, packet, TRUE);
+        int res = RTMP_SendPacket(rtmp, packet, TRUE);
+        LOGD("send packet sendSpsAndPps result:%d", res);
         //LOGD("send packet sendSpsAndPps");
     }
     free(packet);
@@ -193,7 +194,8 @@ void RtmpLivePublish::addH264Body(unsigned char *buf, int len, long timeStamp) {
 
     //send rtmp h264 body data
     if (RTMP_IsConnected(rtmp)) {
-        RTMP_SendPacket(rtmp, packet, TRUE);
+        int res = RTMP_SendPacket(rtmp, packet, TRUE);
+        LOGD("send packet sendVideoData result:%d", res);
         //LOGD("send packet sendVideoData");
     }
     free(packet);
@@ -270,7 +272,8 @@ void RtmpLivePublish::addSequenceAacHeader(int sampleRate, int channel, int time
 
     //send rtmp aac head
     if (RTMP_IsConnected(rtmp)) {
-        RTMP_SendPacket(rtmp, packet, TRUE);
+        int res = RTMP_SendPacket(rtmp, packet, TRUE);
+        LOGD("send packet sendAacSpec result:%d", res);
         //LOGD("send packet sendAacSpec");
     }
     free(packet);
@@ -308,8 +311,8 @@ void RtmpLivePublish::addAccBody(unsigned char *buf, int len, long timeStamp) {
 
     //send rtmp aac data
     if (RTMP_IsConnected(rtmp)) {
-        RTMP_SendPacket(rtmp, packet, TRUE);
-        //LOGD("send packet sendAccBody");
+        int res = RTMP_SendPacket(rtmp, packet, TRUE);
+        LOGD("send packet sendAccBody result:%d", res);
     }
     free(packet);
 }
