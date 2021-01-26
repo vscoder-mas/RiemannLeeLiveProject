@@ -54,9 +54,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         }
                     });
         }
+
         mMediaPublisher = new MediaPublisher();
-        mMediaPublisher.setRtmpUrl("rtmp://192.168.1.109:1935/live1/room");
-        //mMediaPublisher.setRtmpUrl("rtmp://192.168.0.6:1935/live1/room");
+        mMediaPublisher.setRtmpUrl("rtmp://121.196.157.174:1935/myapp/mystream");
     }
 
     @Override

@@ -43,7 +43,7 @@
             android:background="@android:color/transparent"
             android:textColor="#ffffff"
             android:textSize="14dp"
-            android:text="rtmp://192.168.0.6:1935/live1/room"
+            android:text="rtmp://121.196.157.174:1935/myapp/mystream"
             />
 
         <TextView
