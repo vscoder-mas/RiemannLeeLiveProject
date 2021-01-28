@@ -176,8 +176,8 @@ void FrameEncoder::setParams() {
 
     // Intra refres:
     params.i_keyint_max = 25;
-    params.i_keyint_min = 1;
-    params.b_intra_refresh = 1;
+    params.i_keyint_min = 25;
+    params.b_intra_refresh = 0;
 
     //参数i_rc_method表示码率控制，CQP(恒定质量)，CRF(恒定码率)，ABR(平均码率)
     //恒定码率，会尽量控制在固定码率
